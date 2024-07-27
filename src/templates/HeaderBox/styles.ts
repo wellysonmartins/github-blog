@@ -19,6 +19,7 @@ export const Content = styled.section`
 
 export const ContentTitle = styled.article`
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 8px;
   color: ${props => props.theme["base-title"]};

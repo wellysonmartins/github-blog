@@ -7,7 +7,7 @@ export const SearchInputContainer = styled.form`
     flex: 1;
     padding: 12px 16px;
     height: 50px;
-    color: ${props => props.theme["base-label"]};
+    color: ${props => props.theme["base-text"]};
     font-size: 1rem;
     border: 1px solid ${props => props.theme["base-border"]};
     background-color: ${props => props.theme["base-input"]};
@@ -15,6 +15,10 @@ export const SearchInputContainer = styled.form`
 
     &::placeholder {
       color: ${props => props.theme["base-label"]}
+    }
+
+    &:focus {
+      border-color: ${props => props.theme["blue"]};
     }
   }
 `

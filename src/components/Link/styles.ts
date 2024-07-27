@@ -5,15 +5,15 @@ export const Container = styled.a`
   gap: 8px;
   font-size: 0.75rem;
   color: ${props => props.theme["blue"]};
-  text-transform: uppercase;
-  max-height: 19px;
-  align-items: center;
+  text-transform: uppercase; 
+  max-height: 19px;  
   cursor: pointer;
   font-weight: 700;
   text-decoration: none;
+  border-bottom: 1px solid transparent;
 
   &:hover {
-    opacity: 0.8;
-    transition: opacity 0.2s;
+    transition: border 0.2s;
+    border-bottom-color: ${props => props.theme["blue"]};
   }
 `

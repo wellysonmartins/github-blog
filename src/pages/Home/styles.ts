@@ -13,6 +13,8 @@ export const SearchContainer = styled.section`
   }
 
   span:nth-child(1) {
+    min-width: max-content;
+    font-weight: 700;
     font-size: 1.125rem;
     color: ${props => props.theme["base-subtitle"]}
   }
