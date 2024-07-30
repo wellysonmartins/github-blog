@@ -10,6 +10,7 @@ export const Container = styled.article`
   border-radius: 10px;
   min-width: 350px;
   border: 2px solid ${props => props.theme["base-post"]};
+  cursor: pointer;
 
   &:hover {
     border-color: ${props => props.theme["base-label"]};

@@ -13,22 +13,28 @@ import { Skeleton } from "../../components/Skeleton";
 
 export const Home = () => {
   const { getIssues } = useGithub();
-  const handleSearch = (data: SearchData) => {
-    console.log(data);
-  };
-
   const [issues, setIssues] = useState<IssueData[] | null>(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
+  const username = "wellysonmartins";
+  const repo = "github-blog";
+
+  const fetchData = async (q: string) => {
+    setTimeout(async () => {
       const data = await getIssues({
-        username: "wellysonmartins",
-        repo: "github-blog",
+        username,
+        repo,
+        q,
       });
       setIssues(data);
-    };
+    }, 300);
+  };
 
-    setTimeout(() => fetchData(), 500);
+  const handleSearch = (data: SearchData) => {
+    fetchData(data?.query);
+  };
+
+  useEffect(() => {
+    fetchData("");
   }, []);
 
   return (
@@ -53,11 +59,7 @@ export const Home = () => {
 
       <PostContainer>
         {issues && issues.map((el) => <PostCard key={el.id} data={el} />)}
-        {!issues && (
-          <>
-            <Skeleton width="100%" height="222px" />
-          </>
-        )}
+        {!issues && <Skeleton width="100%" height="222px" />}
       </PostContainer>
     </BaseContainer>
   );

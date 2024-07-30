@@ -3,7 +3,12 @@ export interface GetUserProps {
 }
 
 export interface GetIssuesProps extends GetUserProps {  
-  repo: string
+  q?: string
+  repo: string  
+}
+
+export interface GetIssueProps extends GetIssuesProps {
+  issueNumber: string
 }
 
 export interface UserData {
